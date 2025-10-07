@@ -1,0 +1,170 @@
+body {
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    margin: 0;
+    padding: 0;
+    background: hsl(212, 59%, 13%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: hsl(213, 59%, 24%);
+    height: 480px;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container h1 {
+    margin-top: 0;
+    font-size: 35px;
+    text-shadow: 0 0 20px hsl(214, 60%, 82%);
+    color: hsl(214, 79%, 68%);
+}
+
+.charLength {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.charLength input {
+    text-align: center;
+}
+
+.selector-container {
+    color: white;
+    background: hsla(212, 58%, 13%, 0.637);
+    border: 1px hsl(213, 51%, 11%) solid;
+    border-radius: 20px;
+    width: 270px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.selector-container h5 {
+    margin: 4px;
+    padding: 0;
+}
+
+.selector-child-container {
+    font-style: italic;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px 35px;
+    padding: 2px 20px;
+}
+
+.password-container {
+    position: relative;
+    height: 100px;
+    width: 250px;
+    background: hsla(212, 58%, 13%, 0.637);
+    border: 2px hsl(213, 51%, 11%) solid;
+    border-radius: 10px;
+    margin-top: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.password-container p {
+    margin-bottom: 30px;
+    font-style: italic;
+    color: white;
+}
+
+#generate-button {
+    color: aquamarine;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 50px;
+    cursor: pointer;
+    background-color: hsl(211, 95%, 57%);
+    box-shadow: 0px 0px 10px hsl(211, 95%, 60%);
+}
+
+#generate-button:hover {
+    background-color: hsl(211, 89%, 64%);
+}
+
+#generate-button:active {
+    background-color: hsl(211, 95%, 74%);
+}
+
+#Password {
+    font-size: 16px;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: hsl(192, 42%, 91%);
+}
+
+#copy-button {
+    position: absolute;
+    bottom: 7px;
+    right: 10px;
+    padding: 5px 8px;
+    background-color: hsl(211, 100%, 50%);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#copy-button:hover {
+    background-color: hsl(211, 92%, 62%);
+}
+
+#copy-button:active {
+    background-color: hsl(211, 95%, 74%);
+}
+
+@property --deg{
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: 0deg;
+}
+
+.container::before,
+.container::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: conic-gradient(
+        from var(--deg) at center,
+        hsl(213, 80%, 67%),
+        hsl(212, 98%, 32%),
+        hsl(213, 94%, 26%),
+        hsl(213, 80%, 67%)
+    );
+    border-radius: inherit;
+    z-index: -2;
+    padding: 2px;
+    animation: autoRotate 2s linear infinite;
+}
+
+.container::after {
+    filter: blur(15px);
+}
+
+@keyframes autoRotate {
+    to{
+        --deg: 360deg;
+    }
+}
